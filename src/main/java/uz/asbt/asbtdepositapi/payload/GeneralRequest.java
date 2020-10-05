@@ -13,7 +13,6 @@ public class GeneralRequest {
     protected String application;
 
     @NotBlank
-    @Size(min = 5, max = 5)
     protected Long requestId;
 
     public Short getService() {

@@ -1,4 +1,4 @@
 package uz.asbt.asbtdepositapi.payload;
 
-public class OpenDepositResponse {
+public class OpenDepositResponse extends GeneralResponse {
 }

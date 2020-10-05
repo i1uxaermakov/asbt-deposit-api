@@ -1,5 +1,7 @@
 package uz.asbt.asbtdepositapi.model;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import uz.asbt.asbtdepositapi.payload.GeneralResponse;
 
 import javax.persistence.*;
@@ -21,14 +23,21 @@ public class PersistedResponse {
     protected String message;
     protected Date run;
     protected long requestId;
+
+    @Lob
+    protected String request;
+
+    @Lob
     protected String response;
 
-    public PersistedResponse(GeneralResponse response, String responseJSON) {
+    public PersistedResponse(GeneralResponse response) throws JsonProcessingException {
         error = response.getError();
         message = response.getMessage();
         run = response.getRun();
         requestId = response.getRequestId();
-        this.response = responseJSON;
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        this.response = objectMapper.writeValueAsString(response);
     }
 
     public PersistedResponse() {
