@@ -1,25 +1,15 @@
 package uz.asbt.asbtdepositapi.payload;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
 public class GeneralRequest {
-
-    @NotBlank
-    protected Short service;
-
-    @NotBlank
-    @Size(max = 25)
+    protected Integer service;
     protected String application;
-
-    @NotBlank
     protected Long requestId;
 
-    public Short getService() {
+    public Integer getService() {
         return service;
     }
 
-    public void setService(Short service) {
+    public void setService(Integer service) {
         this.service = service;
     }
 
@@ -31,11 +21,11 @@ public class GeneralRequest {
         this.application = application;
     }
 
-    public long getRequestId() {
+    public Long getRequestId() {
         return requestId;
     }
 
-    public void setRequestId(long requestId) {
+    public void setRequestId(Long requestId) {
         this.requestId = requestId;
     }
 }

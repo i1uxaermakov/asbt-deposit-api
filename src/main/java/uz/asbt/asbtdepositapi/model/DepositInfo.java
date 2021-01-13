@@ -1,4 +1,5 @@
-package uz.asbt.asbtdepositapi.payload;
+package uz.asbt.asbtdepositapi.model;
+
 
 public class DepositInfo {
 
@@ -6,7 +7,7 @@ public class DepositInfo {
 
     private String name;
 
-    private Integer period;
+    private Long period;
 
     private String typePeriod;
 
@@ -16,9 +17,9 @@ public class DepositInfo {
 
     private Long minOpen;
 
-    private Short capitalization;
+    private Long capitalization;
 
-    private Short earlyClosing;
+    private Long earlyClosing;
 
     private String currency;
 
@@ -43,11 +44,11 @@ public class DepositInfo {
         this.name = name;
     }
 
-    public Integer getPeriod() {
+    public Long getPeriod() {
         return period;
     }
 
-    public void setPeriod(Integer period) {
+    public void setPeriod(Long period) {
         this.period = period;
     }
 
@@ -83,19 +84,19 @@ public class DepositInfo {
         this.minOpen = minOpen;
     }
 
-    public Short getCapitalization() {
+    public Long getCapitalization() {
         return capitalization;
     }
 
-    public void setCapitalization(Short capitalization) {
+    public void setCapitalization(Long capitalization) {
         this.capitalization = capitalization;
     }
 
-    public Short getEarlyClosing() {
+    public Long getEarlyClosing() {
         return earlyClosing;
     }
 
-    public void setEarlyClosing(Short earlyClosing) {
+    public void setEarlyClosing(Long earlyClosing) {
         this.earlyClosing = earlyClosing;
     }
 

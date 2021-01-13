@@ -1,23 +1,36 @@
-package uz.asbt.asbtdepositapi.payload;
+package uz.asbt.asbtdepositapi.exception;
 
 import java.util.Date;
 
-public class GeneralResponse {
+public class ApiExceptionResponsePayload {
     protected Integer service;
     protected Integer error;
     protected String message;
     protected Date run;
     protected Long requestId;
 
-    public GeneralResponse() {
+    public ApiExceptionResponsePayload(ApiException exception) {
+        service = exception.getService();
+        error = exception.getError();
+        message = exception.getMessage();
+        run = exception.getRun();
+        requestId = exception.getRequestId();
     }
 
-    public GeneralResponse(Integer service, Integer error, String message, Date run, Long requestId) {
+    public ApiExceptionResponsePayload(Integer service, Integer error, String message, Date run, Long requestId) {
         this.service = service;
         this.error = error;
         this.message = message;
         this.run = run;
         this.requestId = requestId;
+    }
+
+    public Integer getService() {
+        return service;
+    }
+
+    public void setService(Integer service) {
+        this.service = service;
     }
 
     public Integer getError() {
@@ -51,14 +64,4 @@ public class GeneralResponse {
     public void setRequestId(Long requestId) {
         this.requestId = requestId;
     }
-
-    public Integer getService() {
-        return service;
-    }
-
-    public void setService(Integer service) {
-        this.service = service;
-    }
-
-
 }

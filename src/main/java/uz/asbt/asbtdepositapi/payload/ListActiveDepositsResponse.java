@@ -1,18 +1,17 @@
 package uz.asbt.asbtdepositapi.payload;
 
-import javafx.application.Application;
-import javafx.stage.Stage;
+import uz.asbt.asbtdepositapi.model.DepositInfo;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class ListDepositsResponse extends GeneralResponse {
+public class ListActiveDepositsResponse extends GeneralResponse {
     private List<DepositInfo> rows = new LinkedList<>();
 
-    public ListDepositsResponse() {
+    public ListActiveDepositsResponse() {
     }
 
-    public ListDepositsResponse(List<DepositInfo> rows) {
+    public ListActiveDepositsResponse(List<DepositInfo> rows) {
         this.rows = rows;
     }
 

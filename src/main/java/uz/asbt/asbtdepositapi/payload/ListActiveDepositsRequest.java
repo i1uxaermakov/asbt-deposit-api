@@ -1,6 +1,6 @@
 package uz.asbt.asbtdepositapi.payload;
 
-public class ListDepositsRequest extends GeneralRequest {
+public class ListActiveDepositsRequest extends GeneralRequest {
     protected String bank;
 
     public String getBank() {
